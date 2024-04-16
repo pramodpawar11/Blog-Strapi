@@ -1,8 +1,18 @@
-import React from 'react'
+"use client"
+import { CategoryContext } from '@/context/CategoryContent';
+import React, { useContext } from 'react'
 
 const Category = ({cat}:any) => {
+  const {category,changeCategory} = useContext(CategoryContext);
   return (
-    <div  className='bg-[#af8533] p-4 rounded-lg shadow-md cursor-pointer'>
+    <div
+      onClick={() => changeCategory(cat.attributes.Title)}
+      className={`${
+        cat.attributes.Title === category
+          ? "bg-[#ffffff] text-black"
+          : "bg-[#af8533]"
+      }  p-4 rounded-lg shadow-md cursor-pointer`}
+    >
       {cat.attributes.Title}
     </div>
 

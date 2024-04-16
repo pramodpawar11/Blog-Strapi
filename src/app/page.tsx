@@ -25,7 +25,7 @@ const fetchBlogs= async ()=>{
     }
   }
   try {
-    const res = await fetch("http://localhost:1337/api/blogs?populated=*",option);
+    const res = await fetch("http://localhost:1337/api/blogs?populate=*",option);
     const response = await res.json();
     console.log(response);
     return response
